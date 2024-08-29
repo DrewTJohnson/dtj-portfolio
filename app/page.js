@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { PrismaClient } from '@prisma/client';
 
 export default async function Home() {
-  const prisma = new PrismaClient();
-  const pages = await prisma.page.findMany();
 
   return (
     <main className="min-h-screen">
