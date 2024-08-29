@@ -1,0 +1,45 @@
+{
+  "models": {
+    "page": {
+      "id": "page",
+      "tableName": "page",
+      "fields": [
+        {
+          "id": "page.id",
+          "name": "id",
+          "columnName": "id",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": true
+        },
+        {
+          "id": "page.name",
+          "name": "name",
+          "columnName": "name",
+          "type": "text",
+          "isRequired": true,
+          "kind": "scalar",
+          "isList": false,
+          "isGenerated": false,
+          "sequence": false,
+          "hasDefaultValue": false,
+          "isId": false
+        }
+      ],
+      "uniqueConstraints": [
+        {
+          "name": "page_pkey",
+          "fields": [
+            "id"
+          ]
+        }
+      ]
+    }
+  },
+  "enums": {}
+}

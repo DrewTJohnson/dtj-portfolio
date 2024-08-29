@@ -1,112 +1,174 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Hero from '@/app/ui/hero';
+import Link from 'next/link';
+import { PrismaClient } from '@prisma/client';
 
-export default function Home() {
+export default async function Home() {
+  const prisma = new PrismaClient();
+  const pages = await prisma.page.findMany();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="min-h-screen">
+      <Hero
+        title="Drew T. Johnson"
+        description="Welcome to my portfolio. I'm a full stack developer based in the United States."
+        typewriter
+        speed={100}
+      />
+      <div className="animate-fade-in delay-200 mb-24">
+        <div className="container-sm text-left mb-24">
+          <p>I come from a marketing and design background with a focus on customer service.
+          I've taken those skills and adapted them into being a highly skilled developer
+          with a large focus on communication and flexibility.</p>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+        <div className="container-xs">
+          <p className="mb-12 text-center">
+            I have experience with a plethora of languages and frameworks,
+            including but not strictly limited to:
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+        </div>
+        <div className="container-sm mb-24">
+          <ul className="grid max-[425px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 auto-rows-max text-center">
+            <li>
+              <Link href="https://www.php.net/" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">
+                <Image
+                  className="object-contain my-auto"
+                  src="/php-logo.png"
+                  alt="PHP Logo"
+                  width={25}
+                  height={25}
+                />
+                <span className="text-sm font-bold">PHP</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">
+                <Image
+                  className="object-contain"
+                  src="/js-logo.png"
+                  alt="JavaScript Logo"
+                  width={25}
+                  height={25}
+                />
+                <span className="text-sm font-bold">JavaScript</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://vuejs.org/" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">
+                <Image
+                  src="/vue-logo.png"
+                  alt="Vue Logo"
+                  width={25}
+                  height={25}
+                />
+                <span className="text-sm font-bold">Vue</span>
+              </Link>
+            </li>
+              <li>
+                <Link href="https://tailwindcss.com/" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">
+                  <Image
+                    src="/tailwind-logo.svg"
+                    alt="TailwindCSS Logo"
+                    width={25}
+                    height={25}
+                  />
+                  <span className="text-sm font-bold">TailwindCSS</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://graphql.org/" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">
+                  <Image
+                    src="/graphql-logo.svg"
+                    alt="GraphQL Logo"
+                    width={25}
+                    height={25}
+                  />
+                  <span className="text-sm font-bold">GraphQL</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://laravel.com/" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">
+                  <Image
+                    src="/laravel-logo.svg"
+                    alt="Laravel Logo"
+                    width={25}
+                    height={25}
+                  />
+                  <span className="text-sm font-bold">Laravel</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://react.dev/" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">
+                  <Image
+                    src="/react-logo.svg"
+                    alt="React Logo"
+                    width={25}
+                    height={25}
+                  />
+                  <span className="text-sm font-bold">ReactJS</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://nuxt.com/" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">
+                  <Image
+                    src="/nuxt-logo.png"
+                    alt="Nuxt Logo"
+                    width={25}
+                    height={25}
+                  />
+                  <span className="text-sm font-bold">Nuxt</span>
+                </Link>
+              </li>
+          </ul>
+        </div>
+        <div className="container-sm">
+          <p className="mb-12 text-center">
+            And the following portfolio is a showcase of my ability to pick up
+            new technologies quickly and adapt to the latest standards and practices.
+            This portfolio is built with a combination of
+            <span className="flex flex-wrap justify-center items-center gap-y-1 mt-1">
+              <Link href="https://nextjs.org/" className="mx-1 text-xs inline-flex items-center justify-center gap-x-2 bg-gray-700/75 px-2 py-1 rounded-lg border-2 border-pink-100 interact:border-pink-500 transition-all duration-300">
+                <Image
+                  src="/nextjs-logo.svg"
+                  alt="NextJS Logo"
+                  width={18}
+                  height={18}
+                />
+                <span className="font-bold">NextJS</span>
+              </Link> and <Link href="https://tailwindcss.com/" className="mx-1 text-xs inline-flex items-center justify-center gap-x-2 bg-gray-700/75 px-2 py-1 rounded-lg border-2 border-pink-100 interact:border-pink-500 transition-all duration-300">
+                <Image
+                  src="/tailwind-logo.svg"
+                  alt="TailwindCSS Logo"
+                  width={18}
+                  height={18}
+                />
+                <span className="font-bold">TailwindCSS</span>
+              </Link>, and will soon be integrated with <Link href="https://supabase.com/" className="mx-1 text-xs inline-flex items-center justify-center gap-x-2 bg-gray-700/75 px-2 py-1 rounded-lg border-2 border-pink-100 interact:border-pink-500 transition-all duration-300">
+                <Image
+                  src="/supabase-logo.png"
+                  alt="Supabase Logo"
+                  width={18}
+                  height={18}
+                />
+                <span className="font-bold">Supabase</span>
+              </Link> to handle my personal authoring needs.
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
           </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="text-right">
+            <a className="flex justify-end items-center gap-x-4 text-xl font-bold uppercase text-right interact:text-pink-600 interact:gap-x-5 duration-300 transition-all"
+               href="/projects">Checkout my projects
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              className="size-6">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   );
