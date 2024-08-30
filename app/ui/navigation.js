@@ -11,7 +11,9 @@ export default function Navigation() {
   useEffect(() => {
     const email = 'ZHRqb2huc29uMTk5NUBnbWFpbC5jb20=';
     const form = document.getElementById('contact');
+    const mobileForm = document.getElementById('mobileContact');
     form.setAttribute('href', 'mailto:'.concat(atob(email)));
+    mobileForm.setAttribute('href', 'mailto:'.concat(atob(email)));
   }, [])
 
 
@@ -47,7 +49,7 @@ export default function Navigation() {
             <Bars3Icon className="h-8 w-8" />
           </button>
           <div
-            className={`absolute block top-0 bottom-0 right-0 overflow-hidden w-full min-h-screen h-screen bg-zinc-900 z-10 transition-all duration-300 ${showMenu ? 'w-full' : 'w-0'}`}
+            className={`absolute block top-0 bottom-0 right-0 overflow-hidden min-h-screen h-screen bg-zinc-900 z-10 transition-all duration-300 ${showMenu ? 'w-full' : 'w-0'}`}
           >
             <div className="flex items-center justify-end pt-4 p-8">
               <button
@@ -66,7 +68,7 @@ export default function Navigation() {
                 <Link className="text-pink-200 font-semibold hover:text-pink-400 transition duration-300" href="/projects" onClick={() => setShowMenu(!showMenu)}>Projects</Link>
               </li>
               <li>
-                <Link className="text-pink-200 font-semibold hover:text-pink-400 transition duration-300" href="/contact" onClick={() => setShowMenu(!showMenu)}>Contact</Link>
+                <Link className="text-pink-200 font-semibold hover:text-pink-400 transition duration-300" id="mobileContact" href="" onClick={() => setShowMenu(!showMenu)}>Contact</Link>
               </li>
             </ul>
           </div>

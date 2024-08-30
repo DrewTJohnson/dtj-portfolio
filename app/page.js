@@ -26,7 +26,7 @@ export default async function Home() {
           </p>
         </div>
         <div className="container-sm mb-24">
-          <ul className="grid max-[425px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 auto-rows-max text-center">
+          <ul className="grid max-[400px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 auto-rows-max text-center">
             <li>
               <Link href="https://www.php.net/" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">
                 <Image

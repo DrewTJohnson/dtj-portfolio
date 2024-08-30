@@ -14,6 +14,16 @@ export default function CenteredSlider(props) {
     slidesToShow: 3,
     speed: 500,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      }
+    ]
   };
 
   return (

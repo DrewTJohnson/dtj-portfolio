@@ -118,6 +118,11 @@ body {
   transform: scale(2.5);
   transition: 0.25s;
 }
+@media only screen and (max-width: 768px) {
+  .slick-slide.slick-active.slick-current {
+    transform: scale(2.25);
+  }
+}
 .slick-slide.slick-active:not(.slick-current) .image,
 .slick-slide.slick-active.slick-current .image,
 .slick-slide:not(.slick-active) .image {
