@@ -1,13 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    redirects: async () => [
-        {
-            source: '/:path*',
-            has: [{ type: 'host', value: 'www.yourdomain.com' }],
-            destination: 'https://yourdomain.com/:path*',
-            permanent: true
-        }
-    ]
+    redirects: async () => {
+        return [
+            {
+                source: '/:path*',
+                has: [{ type: 'header', key: 'host', value: 'www.drewtjohnson.com' }],
+                destination: 'https://drewtjohnson.com/:path*',
+                permanent: true,
+            },
+        ];
+    },
 };
 
 export default nextConfig;
