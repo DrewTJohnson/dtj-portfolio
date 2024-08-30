@@ -8,9 +8,9 @@ export default function Page() {
               description="I have a ton of experience building sites, here are some that highlight my skills."
           />
           <div className="container grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 grid-flow-row md:gap-10 items-center pb-14">
-              <img className="animate-fade-in animation-duration-300 rounded"
+              <img className="order-2 md:order-1 animate-fade-in animation-duration-300 rounded"
                    src="/project-images/roburritos-page.png"/>
-              <div className="animate-fade-in animation-duration-500 flex flex-col">
+              <div className="order-1 md:order-2 animate-fade-in animation-duration-500 flex flex-col">
                   <h2 className="text-3xl text-pink-500 font-bold pb-4 md:pb-8">Roburritos</h2>
                   <p className="pb-8">Roburritos is an eCommerce site built with WordPress and Woocommerce.
                       The previous site was compromised and I was brought in to rebuild it from the ground up using

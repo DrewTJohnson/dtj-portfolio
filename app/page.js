@@ -14,7 +14,7 @@ export default async function Home() {
         speed={100}
       />
       <div className="animate-fade-in delay-200 mb-24">
-        <div className="container-sm text-left mb-24">
+        <div className="container-sm text-left mb-12">
           <p>I come from a marketing and design background with a focus on customer service.
           I've taken those skills and adapted them into being a highly skilled developer
           with a large focus on communication and flexibility.</p>
@@ -25,7 +25,7 @@ export default async function Home() {
             including but not strictly limited to:
           </p>
         </div>
-        <div className="container-sm mb-24">
+        <div className="container-sm mb-12">
           <ul className="grid max-[400px]:grid-cols-1 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 auto-rows-max text-center">
             <li>
               <Link href="https://www.php.net/" className="h-full flex items-center gap-x-4 bg-gray-700/75 border-2 border-pink-100 rounded-lg px-4 py-2 interact:border-pink-500 transition-all duration-300" target="_blank">

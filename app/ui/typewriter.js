@@ -26,7 +26,7 @@ const useTypewriter = (text, speed = 75) => {
 const Typewriter = ({ text, speed }) => {
   const displayText = useTypewriter(text, speed);
 
-  return <h1 className="text-6xl font-bold min-h-[60px] text-pink-600 mb-8">{displayText}</h1>;
+  return <h1 className="text-4xl md:text-6xl font-bold min-h-[60px] text-pink-600 mb-4 md:mb-8">{displayText}</h1>;
 };
 
 export default Typewriter;
