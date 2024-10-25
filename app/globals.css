@@ -18,7 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  @media (prefers-color-scheme: light) {
+  @media (prefers-color-scheme: dark) {
     background: linear-gradient(45deg, rgba(0,0,0,1) 35%, rgba(28,28,28,1) 75%, rgba(43,43,43,1) 125%);
   }
   background: #FAF9F6;
