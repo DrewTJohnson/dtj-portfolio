@@ -15,7 +15,7 @@ export default async function Home() {
       />
       <div className="animate-fade-in delay-200 mb-24">
         <div className="container-sm text-left mb-12">
-          <p>I come from a marketing and design background with a focus on customer service.
+          <p className="dark:text-white text-black">I come from a marketing and design background with a focus on customer service.
           I've taken those skills and adapted them into being a highly skilled developer
           with a large focus on communication and flexibility.</p>
         </div>
